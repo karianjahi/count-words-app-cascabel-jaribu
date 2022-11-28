@@ -4,7 +4,7 @@ This code counts words in a string
 import re
 from bs4 import BeautifulSoup
 # pylint: disable=C0303
-# pylint: disable=R0201
+# pylint: disable=R0022
 # pylint: disable=R0903
 class WordCounter:
     """
