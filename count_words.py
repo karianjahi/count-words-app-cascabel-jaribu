@@ -3,6 +3,9 @@ This code counts words in a string
 """
 import re
 from bs4 import BeautifulSoup
+# pylint: disable=C0303
+# pylint: disable=R0201
+# pylint: disable=R0903
 class WordCounter:
     """
     This is the class that houses the attributes and methods
@@ -15,24 +18,24 @@ class WordCounter:
         This is usually the first port of entry to our code
         """
         ...
-    
+
     def count_words(self, text):
         """This is the method that counts the words
 
         Parameters
         ----------
         text : str
-            A word or a sentence
+            A word or a SENTENCE
 
         Returns
         -------
         int
-            number of words in the corpus/sentence
+            number of words in the corpus/SENTENCE
         """
         assert isinstance(text, str), "Strings only"
         text = self._run_text_through_html_filter(text)
         text = self._remove_hyphens(text)
-        splits =  text.split()
+        splits = text.split()
         count = len(splits)
         return count
     
@@ -42,7 +45,7 @@ class WordCounter:
         Parameters
         ----------
         text : str
-            A word or a sentence
+            A word or a SENTENCE
 
         Returns
         -------
@@ -69,12 +72,12 @@ class WordCounter:
         
 
 if __name__ == "__main__":
-    inst = WordCounter()
-    # sentence = ["I am a student"]
-    # sentence = "I-am-a-student"
-    sentence = "<h1> Testing html </h>"
-    # print(inst._run_text_through_html_filter(sentence))
+    INST = WordCounter()
+    # SENTENCE = ["I am a student"]
+    # SENTENCE = "I-am-a-student"
+    SENTENCE = "<h1> Testing html </h>"
+    # print(INST._run_text_through_html_filter(SENTENCE))
     
-    print(inst.count_words(sentence))
+    print(INST.count_words(SENTENCE))
         
         
